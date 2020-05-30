@@ -20,6 +20,7 @@ class Bird(Animal):
 
 dog = Animal()
 dog.move()
+dog.feed()
 print("-----------")
 fish = Fish()
 fish.move()

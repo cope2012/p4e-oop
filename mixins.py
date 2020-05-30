@@ -6,45 +6,45 @@ class Animal:
         print('needs to eat')
 
 
-class CanSwim:
+class CanSwimMixin:
     def can_swim(self):
         print('by swimming')
 
 
-class CanFly:
+class CanFlyMixin:
     def can_fly(self):
         print('by flying')
 
 
-class Fish(Animal, CanSwim):
+class Fish(Animal, CanSwimMixin):
     def move(self):
         super().move()
         self.can_swim()
 
 
-class Bird(Animal, CanFly):
+class Bird(Animal, CanFlyMixin):
     def move(self):
         super().move()
         self.can_fly()
 
 
-class SwimmingBird(Bird, CanSwim):
+class SwimmingBird(Bird, CanSwimMixin):
     def move(self):
         super().move()
         self.can_swim()
 
 
-dog = Animal()
-dog.move()
-print("-----------")
-fish = Fish()
-fish.move()
-fish.feed()
-print("-----------")
-bird = Bird()
-bird.move()
-bird.feed()
-print("-----------")
+# dog = Animal()
+# dog.move()
+# print("-----------")
+# fish = Fish()
+# fish.move()
+# fish.feed()
+# print("-----------")
+# bird = Bird()
+# bird.move()
+# bird.feed()
+# print("-----------")
 duck = SwimmingBird()
 duck.move()
 duck.feed()
